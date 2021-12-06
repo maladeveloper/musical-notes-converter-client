@@ -20,7 +20,7 @@ const SpacedRow = styled(Row)`
   margin: 50px 0px;
 `
 
-const SubmissionFormStep = ({ onNext, onBack }) =>{
+const SubmissionFormStep = ({ onNext, onBack, setJobId }) =>{
   const [isLoading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(false)
@@ -34,6 +34,7 @@ const SubmissionFormStep = ({ onNext, onBack }) =>{
         console.log('the success message', message)
         setSuccessMessage(message)
         setLoading(false)
+        setJobId(jobId)
       }else{
         setErrorMessage(message)
         setLoading(false)
@@ -67,7 +68,7 @@ const SubmissionFormStep = ({ onNext, onBack }) =>{
         <>
         <SpacedRow justifyContent="start">
           <Col sm={10}>
-            <SuccessNotification message={successMessage} setVisible={setSuccessMessage}/>
+            <SuccessNotification message={successMessage} />
           </Col>
         </SpacedRow>
         <SpacedRow justifyContent="start">

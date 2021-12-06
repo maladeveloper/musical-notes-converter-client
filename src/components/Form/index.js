@@ -45,9 +45,9 @@ const Form = ({ sendFormInfo }) =>{
             <Field>
               <Label>File Column Width</Label>
               <Hint>The number of columns that should be present in the created instrument worksheets</Hint>
-              <Input {...register("widthRows",{ required: true, pattern:/^[0-9]*$/ }) } validation={errors.widthRows && 'error'} defaultValue={12}/>
+              <Input {...register("widthRows",{ required: true, pattern:/^[0-9]*$/, max:18278, min:1 }) } validation={errors.widthRows && 'error'} defaultValue={12}/>
             </Field>
-            {errors.widthRows && <Message validation="error">Must provide a number</Message>}
+            {errors.widthRows && <Message validation="error">Must provide a number between 1 and 18278</Message>}
           </Col>
         </SpacedRow>
         <SpacedRow justifyContent="start">

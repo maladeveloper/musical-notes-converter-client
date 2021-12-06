@@ -8,6 +8,16 @@ export const postSpreadsheetData = async (data) => {
     headers: {'Content-Type': 'application/json'},
   })
   const retData = await response.json()
+  return [response.status, retData]
+}
 
+export const findJobStatus = async (jobId) => { 
+  const url = BASE_URL + 'status'
+  const response = await fetch(url, {
+    method:'POST',
+    body: JSON.stringify({ jobId }),
+    headers: {'Content-Type': 'application/json'},
+  })
+  const retData = await response.json()
   return [response.status, retData]
 }
