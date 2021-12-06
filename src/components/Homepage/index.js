@@ -7,7 +7,7 @@ import SubmissionFormStep from '../SubmissionFormStep'
 import CheckProgressStep from '../CheckProgressStep'
 
 const SpacedRow = styled(Row)`
-  margin-top: 200px;
+  margin-top: 100px;
 `
 
 const SmallSpacedRow = styled(Row)`

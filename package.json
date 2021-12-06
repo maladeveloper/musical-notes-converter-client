@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "@zendeskgarden/react-accordions": "^8.47.0",
     "@zendeskgarden/react-buttons": "^8.47.0",
+    "@zendeskgarden/react-chrome": "^8.47.0",
     "@zendeskgarden/react-forms": "^8.47.0",
     "@zendeskgarden/react-grid": "^8.47.0",
     "@zendeskgarden/react-loaders": "^8.47.0",

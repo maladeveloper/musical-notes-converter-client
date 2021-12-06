@@ -5,6 +5,7 @@ import SubmissionFormStep from './components/SubmissionFormStep'
 import ErrorModal from './components/ErrorModal'
 import SuccessNotification from './components/SuccessNotification'
 import CheckProgressStep from './components/CheckProgressStep'
+import SimpleHeader from './components/SimpleHeader'
 
 //<ErrorModal message={"Unable to Access Spreadsheet"} setVisible={()=>{}} />
 //<SuccessNotification message={"Started"}  setVisible={()=>{console.log('i am closing')}} />
@@ -12,6 +13,7 @@ import CheckProgressStep from './components/CheckProgressStep'
 function App() {
   return (
     <div>
+      <SimpleHeader/>
       <Homepage />
     </div>
 
