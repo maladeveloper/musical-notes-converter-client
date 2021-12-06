@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Form from './components/Form'
+import Homepage from './components/Homepage'
+import SubmissionFormStep from './components/SubmissionFormStep'
+import ErrorModal from './components/ErrorModal'
+import SuccessNotification from './components/SuccessNotification'
 
+//<ErrorModal message={"Unable to Access Spreadsheet"} setVisible={()=>{}} />
+//<SuccessNotification message={"Started"}  setVisible={()=>{console.log('i am closing')}} />
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Homepage />
     </div>
+
   );
 }
 
