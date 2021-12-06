@@ -10,6 +10,11 @@ const SpacedRow = styled(Row)`
   margin-top: 200px;
 `
 
+const SmallSpacedRow = styled(Row)`
+  margin-top: 20px;
+  margin-left:10px;
+`
+
 const ExtendedDiv = styled.div`
   height:600px;
   overflow-y:auto;
@@ -33,10 +38,15 @@ const Homepage = () =>{
                 Share Spreadsheet with Email
               </Stepper.Label>
               <Stepper.Content>
-                Share your the Google Spreadsheet with the Email.
-                <div> 
+                <p>
+                Share your the Google Spreadsheet with this email <b>music-notes-converter@my-project-1577070881918.iam.gserviceaccount.com</b>
+                </p>
+                <p>
+                 Please be sure to give <b>Editor Access</b> to this email above.
+                </p>
+                <SmallSpacedRow> 
                   <Button onClick={onNext}>Next</Button>
-                </div> 
+                </SmallSpacedRow> 
               </Stepper.Content>
             </Stepper.Step>
             <Stepper.Step key="step-2">
