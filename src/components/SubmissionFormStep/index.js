@@ -1,4 +1,4 @@
-import React, { HTMLAttributes,useState, useCallback } from 'react';
+import React, { HTMLAttributes,useState, useCallback, useEffect } from 'react';
 import {
   Notification,
   Title,
@@ -20,10 +20,19 @@ const SpacedRow = styled(Row)`
   margin: 50px 0px;
 `
 
-const SubmissionFormStep = ({ onNext, onBack, setJobId }) =>{
+const SubmissionFormStep = ({ onNext, onBack, setJobId, jobId }) =>{
   const [isLoading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState(false)
+
+  useEffect(() => {
+    if (!jobId) {
+      setLoading(false)
+      setErrorMessage(null)
+      setSuccessMessage(false)
+    }
+    
+  }, [jobId])
 
   const sendFormInfo = (data) => {
     setLoading(true)

@@ -25,6 +25,11 @@ const Homepage = () =>{
   const [step, setStep] = useState(0);
   const [jobId, setJobId] = useState(null)
 
+  const restart = () =>{
+    setStep(0)
+    setJobId(null)
+  }
+
   const onNext = () => setStep(step + 1);
   const onBack = () => setStep(step - 1);
 
@@ -58,6 +63,7 @@ const Homepage = () =>{
                   setJobId={setJobId}
                   onNext={onNext}
                   onBack={onBack}
+                  jobId={jobId}
                 />
               </Stepper.Content>
             </Stepper.Step>
@@ -67,7 +73,7 @@ const Homepage = () =>{
               </Stepper.Label>
               <Stepper.Content>
                 <ExtendedDiv>
-                  <CheckProgressStep jobId={jobId}/>
+                  <CheckProgressStep jobId={jobId} restart={restart}/>
                 </ExtendedDiv>
               </Stepper.Content>
             </Stepper.Step>

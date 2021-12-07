@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from '@zendeskgarden/react-buttons';
 import { Timeline } from '@zendeskgarden/react-accordions';
 import { Span } from '@zendeskgarden/react-typography';
 import { Row, Col } from '@zendeskgarden/react-grid';
@@ -32,12 +33,19 @@ const instrumentsToTimeline = (instruments) => {
     )
   })
 }
-const CheckProgressStep = ({ jobId }) => {
+const CheckProgressStep = ({ jobId, restart }) => {
   //const [doneInstruments, setDoneInstruments] = useState(testInstruments)
   const [doneInstruments, setDoneInstruments] = useState([])
   const [loadingApi, setLoadingApi] = useState(true)
   const [allDone, setAllDone] = useState(null)
   const numJobId = parseInt(jobId)
+
+  const resetToStart = () => {
+    setDoneInstruments([])
+    setLoadingApi(true)
+    setAllDone(null)
+    restart()
+  }
 
   useEffect(() => {
     if (jobId){
@@ -64,11 +72,18 @@ const CheckProgressStep = ({ jobId }) => {
     <>
     { (allDone && !loadingApi)
       ?
-      <SpacedRow justifyContent="start">
-        <Col sm={10}>
-          <SuccessNotification message={allDone} />
-        </Col>
-      </SpacedRow>
+      <>
+        <SpacedRow justifyContent="start">
+          <Col sm={10}>
+            <SuccessNotification message={allDone} />
+          </Col>
+        </SpacedRow>
+        <SpacedRow justifyContent="start">
+          <Col sm={4}>
+            <Button onClick={resetToStart}>Restart</Button>
+          </Col>
+        </SpacedRow>
+      </>
       :
       <>
         <Row justifyContent="center">
