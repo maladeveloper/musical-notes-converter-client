@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MD } from '@zendeskgarden/react-typography'
 import { Button } from '@zendeskgarden/react-buttons';
 import { Modal, Header, Body, Footer, FooterItem, Close } from '@zendeskgarden/react-modals';
 
@@ -6,15 +7,15 @@ import { Modal, Header, Body, Footer, FooterItem, Close } from '@zendeskgarden/r
 const messageToVars = {
   "Unable to Access Spreadsheet": {
     title: "Spreadsheet Cannot be Accessed!",
-    body: `The Spreadsheet specified cannot be accessed.
-    This maybe be due to factors such as the File Name of the Spreadsheet being
-    incorrect or due to the fact that the first step has not been done and such
-    the spreadsheet has not been shared with the relavant email`
+    body: `The Spreadsheet specified cannot be accessed. Please check that Editor Access 
+    has been granted to the email outlined in step one and whether the Spreadsheet name has been entered in correctly.`
+    
   },
    "Worksheet Not Found": { 
      title: "Worksheet Cannot be Found!",
-     body: `Spreadsheet can be accessed yet Worksheet is unable to be found. 
-     This may be due to misspelling of the Worksheet specified.`
+     body: `The Worksheet specified cannot be found. Please make sure the Worksheet exists in the given
+     Spreadsheet and whether the Worksheet name has been correctly entered.`
+     
    },
    "Internal Server Error": { 
      title: "Unrecoverable Error has occured !",
@@ -32,7 +33,7 @@ const ErrorModal = ({ message, setVisible }) => {
     <Modal onClose={() => setVisible(false)}>
       <Header isDanger>{title}</Header>
       <Body>
-        {body}
+        <MD>{body}</MD>
       </Body>
       <Footer>
         <FooterItem>
