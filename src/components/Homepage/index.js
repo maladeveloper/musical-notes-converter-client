@@ -5,6 +5,17 @@ import { Button } from '@zendeskgarden/react-buttons';
 import { Row, Col } from '@zendeskgarden/react-grid';
 import SubmissionFormStep from '../SubmissionFormStep'
 import CheckProgressStep from '../CheckProgressStep'
+import { XXXL } from '@zendeskgarden/react-typography'
+
+const Title = styled(XXXL)`
+  color: #3d4a54;
+`
+
+const TitleRow = styled(Row)`
+  margin-top: 20px;
+  margin-left:10px;
+`
+
 
 const SpacedRow = styled(Row)`
   margin-top: 100px;
@@ -35,6 +46,9 @@ const Homepage = () =>{
 
   return(
     <div>
+      <TitleRow justifyContent="center">
+        <Title isBold={true}>Convert Music Notes</Title>
+      </TitleRow>
       <SpacedRow justifyContent="center">
         <Col sm={5}>
           <Stepper activeIndex={step}>
